@@ -1,0 +1,8 @@
+[active_skills]
+
+[skill_01]
+id = 1
+name = "Punition Générale"
+damage = 0
+type = "none"
+cooldown = 0

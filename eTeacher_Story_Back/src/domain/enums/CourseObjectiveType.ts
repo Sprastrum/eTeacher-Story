@@ -1,0 +1,4 @@
+enum CourseObjectiveType {
+    AVERAGE_GRADE = "AVERAGE_GRADE",
+    SPECIFIC_PUPIL_GRADE = "SPECIFIC_PUPIL_GRADE",
+}

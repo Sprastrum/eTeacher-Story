@@ -1,0 +1,16 @@
+[01]
+name = "Bruit Strident"
+damage.1-9 = 2
+damage.10-25 = 3
+damage.26-33 = 4
+traitId = [1,4,7]
+diff.grade = 9
+diff.level = 1
+
+[02]
+name = "Cri Strident"
+damage.1-11 = 2
+damage.12-22 = 3
+traitId = [4]
+diff.grade = 1
+diff.level = 1

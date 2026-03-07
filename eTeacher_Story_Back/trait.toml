@@ -1,0 +1,9 @@
+[traits]
+
+[trait_01]
+id = 1
+name = "Hyperactif"
+diff.grade = 2
+diff.level = 12
+attacks = []
+skills = []

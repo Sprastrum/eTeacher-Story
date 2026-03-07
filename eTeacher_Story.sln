@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "eTeacher_Story_Back", "eTeacher_Story_Back\eTeacher_Story_Back.njsproj", "{F52E5C44-EFA7-4B88-8404-84EE51EDB0FF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F52E5C44-EFA7-4B88-8404-84EE51EDB0FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F52E5C44-EFA7-4B88-8404-84EE51EDB0FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F52E5C44-EFA7-4B88-8404-84EE51EDB0FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F52E5C44-EFA7-4B88-8404-84EE51EDB0FF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D5019EF1-AD53-4BE2-9461-E0A32424E411}
+	EndGlobalSection
+EndGlobal

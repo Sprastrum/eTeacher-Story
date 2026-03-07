@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    position: relative;
+    min-height: 100vh;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 120px;
+    left: -120px;
+    right: -120px;
+    bottom: 0;
+    background-image: url('../assets/global/unified_bg.jpg');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    z-index: -2;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background-image: url('../assets/global/bg.png');
+    z-index: 100;
+}
+
+#app {
+    position: relative;
+    z-index: 200;
+    padding-top: 60px;
+    min-height: calc(100vh - 60px);
+}

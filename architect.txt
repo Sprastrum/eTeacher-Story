@@ -1,0 +1,50 @@
+typedef ClassicAppearanceData = {
+    var hair:Int;
+    var eyes:Int;
+    var mouth:Int;
+    var top:Int;
+    var bottom:Int;
+}
+
+typedef ClassicPupilInfo = {
+    var id:Int;
+    var name:String;
+    var trait:String;
+    var defaultAppearance:ClassicAppearanceData;
+
+    var knowledge:Int;
+    var boredom:Int;
+    var note:Int;
+    var appearance:ClassicAppearanceData;
+    var assignedDesk:Int;
+    var posStatuses:Array<Manager.State>;
+    var negStatuses:Array<Manager.State>;
+    var critStatuses:Array<Manager.State>;
+}
+
+typedef ClassicClassroomData = {
+    var subject:String;
+    var deskPlacement:Array<Int>;
+    var pupils:Array<ClassicPupilInfo>;
+}
+
+typedef ClassicStartingClassroom = {
+    var pupils:Array<ClassicPupilInfo>;
+}
+
+typedef ClassicGameInventory = {
+    var twinoide:Int;
+    var chalk:Int;
+    var batoit:Int;
+}
+
+typedef ClassicGameData = {
+    var startingClassrooms:Array<ClassicStartingClassroom>;
+    var classroom:ClassicClassroomData;
+    var inventory:ClassicGameInventory;
+}
+
+typedef SaveData = {
+    var version:String;
+    var classicGame:ClassicGameData;
+}
