@@ -9,7 +9,7 @@ export class GamePupilStateRouter extends CommonRoutesConfig {
     }
 
     configureRoutes(): e.Application {
-        this.app.route("/api/game-pupil-state/create").post(GamePupilStateController.create);
+        this.app.route("/api/game-pupil-state").post(GamePupilStateController.create);
 
         return this.app;
     }

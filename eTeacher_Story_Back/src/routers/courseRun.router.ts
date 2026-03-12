@@ -9,8 +9,8 @@ export class CourseRunRouter extends CommonRoutesConfig {
     }
 
     configureRoutes() {
-        this.app.route("/api/course-run/create").post(CourseRunController.create);
-        this.app.route("/api/course-run/delete").delete(CourseRunController.delete);
+        this.app.route("/api/course-run").post(CourseRunController.create);
+        this.app.route("/api/course-run").delete(CourseRunController.delete);
 
         return this.app;
     }

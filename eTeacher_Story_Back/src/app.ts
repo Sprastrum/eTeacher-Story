@@ -5,11 +5,11 @@ import "reflect-metadata";
 import { AppDataSource } from "./data-source";
 
 import { CommonRoutesConfig } from "./routers/common.routes.config";
-import { DevRouter } from "./routers/devRouter";
-import { PlayerRouter } from "./routers/playerRouter";
-import { CourseRunRouter } from "./routers/courseRunRouter";
+import { DevRouter } from "./routers/dev.router";
+import { PlayerRouter } from "./routers/player.router";
+import { CourseRunRouter } from "./routers/courseRun.router";
 import { GameSessionRouter } from "./routers/gameSession.router";
-import { CourseRouter } from "./routers/courseRouter";
+import { CourseRouter } from "./routers/course.router";
 
 
 dotenv.config({

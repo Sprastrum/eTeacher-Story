@@ -31,7 +31,7 @@ class CourseFightService {
     }
 
     async createCourseRun(playerId, courseId) {
-        const response = await fetch(`${this.baseURL}/course-run/create`, {
+        const response = await fetch(`${this.baseURL}/course-run`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -51,7 +51,7 @@ class CourseFightService {
     }
 
     async createGameSession(courseRunId) {
-        const response = await fetch(`${this.baseURL}/game-session/create`, {
+        const response = await fetch(`${this.baseURL}/game-session`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -70,7 +70,7 @@ class CourseFightService {
     }
 
     async createGamePupilState(gameSession, courseId) {
-        const response = await fetch(`${this.baseURL}/game-pupil-state/create`, {
+        const response = await fetch(`${this.baseURL}/game-pupil-state`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

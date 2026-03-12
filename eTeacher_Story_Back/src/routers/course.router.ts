@@ -9,7 +9,7 @@ export class CourseRouter extends CommonRoutesConfig {
     }
 
     configureRoutes() {
-        this.app.route("/api/dev/assign-pupils/:courseId").post(CourseController.assignPupils);
+        this.app.route("/api/dev/course/:courseId/assign-pupils").post(CourseController.assignPupils);
         this.app.route("/api/courses").get(CourseController.getCourses);
         return this.app;
     }

@@ -70,7 +70,7 @@
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="src\routers\common.routes.config.ts" />
-    <TypeScriptCompile Include="src\routers\devRouter.ts" />
+    <TypeScriptCompile Include="src\routers\dev.router.ts" />
     <TypeScriptCompile Include="src\routers\gameRouter.ts" />
     <TypeScriptCompile Include="src\services\attackService.ts" />
     <TypeScriptCompile Include="src\services\classFactory.ts" />
