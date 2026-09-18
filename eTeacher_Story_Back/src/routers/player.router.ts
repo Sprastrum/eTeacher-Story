@@ -1,6 +1,6 @@
 import express from "express";
 import { CommonRoutesConfig } from "./common.routes.config";
-import { PlayerController } from "../controllers/playerController";
+import { PlayerController } from "../controllers/player.controller";
 
 
 export class PlayerRouter extends CommonRoutesConfig {

@@ -1,14 +1,14 @@
 import {GamePupilState} from "../../models/gamePupilState";
 import {TargetEnum} from "../enums/target.enum";
 
+
 export interface TargetInput {
     type: TargetEnum;
-    row?: number;
-    col?: number;
-    count?: number;
+    row: number;
+    col: number;
 }
 
-function resolveAdjacent(pupilStates: GamePupilState[], row: number, col: number): GamePupilState[] {
+function resolveAdjacent(pupilStates: GamePupilState[], row: number, col: number) {
     const targets: GamePupilState[] = [];
 
     const rowStates = pupilStates.filter(
@@ -32,27 +32,31 @@ function resolveAdjacent(pupilStates: GamePupilState[], row: number, col: number
     return targets;
 }
 
-export function resolveTargets(pupilStates: GamePupilState[], target: TargetInput): GamePupilState[] {
-    switch (target.type) {
-        case TargetEnum.SINGLE:
-            return pupilStates.filter(
-                s => s.row === target.row && s.col === target.col
-            );
+export function resolveTargets(pupilStates: GamePupilState[], target: TargetInput) {
+    if (target.row < 0 || target.col < 0) {
+        switch (target.type) {
+            case TargetEnum.SINGLE:
+                return pupilStates.filter(
+                    s => s.row === target.row && s.col === target.col
+                );
 
-        case TargetEnum.COLUMN:
-            return pupilStates.filter(
-                s => s.col === target.col
-            );
+            case TargetEnum.COLUMN:
+                return pupilStates.filter(
+                    s => s.col === target.col
+                );
 
-        case TargetEnum.ROW:
-            return pupilStates.filter(
-                s => s.row === target.row
-            );
+            case TargetEnum.ROW:
+                return pupilStates.filter(
+                    s => s.row === target.row
+                );
 
-        case TargetEnum.ALL:
-            return pupilStates;
+            case TargetEnum.ALL:
+                return pupilStates;
 
-        case TargetEnum.TABLE:
-            return resolveAdjacent(pupilStates, target.row, target.col);
+            case TargetEnum.TABLE:
+                return resolveAdjacent(pupilStates, target.row, target.col);
+        }
+    } else {
+        return;
     }
 }

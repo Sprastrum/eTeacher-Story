@@ -36,4 +36,7 @@ export class GamePupilState{
 
 	@Column()
 	col: number;
+
+	@Column({ type: 'jsonb', default: () => "'[]'"})
+	statusEffects: { type: string; turnsLeft: number; }[];
 }

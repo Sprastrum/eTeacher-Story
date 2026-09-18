@@ -1,4 +1,5 @@
 import {PLAYER_LEVELS} from "../../../../constants/player.types.js";
+import "./InformationCard.css";
 
 
 export class InformationCard {
@@ -11,7 +12,6 @@ export class InformationCard {
     }
 
     render() {
-
         const informationCard = document.createElement('div');
         informationCard.className = 'information-card';
 

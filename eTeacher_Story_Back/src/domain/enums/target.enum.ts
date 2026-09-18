@@ -4,5 +4,6 @@ export enum TargetEnum {
 	TABLE = 'TABLE',
 	COLUMN = 'COLUMN',
 	ROW = 'ROW',
-	RANDOM = 'RANDOM'
+	RANDOM = 'RANDOM',
+	SELF = 'SELF'
 }

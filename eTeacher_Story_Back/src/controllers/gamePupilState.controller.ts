@@ -8,7 +8,7 @@ export class GamePupilStateController {
         try {
             const { gameSessionId, courseId } = req.body;
 
-            if (!gameSessionId || courseId) return res.status(400).json({ message: "gameSessionId and courseId are required" });
+            if (!gameSessionId || !courseId) return res.status(400).json({ message: "gameSessionId and courseId are required" });
 
             const response = await GamePupilStateService.createPupilStateFromCourse(gameSessionId, courseId);
 

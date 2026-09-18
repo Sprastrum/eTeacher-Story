@@ -5,6 +5,7 @@ export const PUPIL_BEHAVIOR = {
         skills: {},
         uniqueSkills: {},
         petSkill: {},
+        weight: 1,
     },
     JOVIAL: {
         ignorance: { minPoints: 2, maxPoints: 4 },
@@ -12,6 +13,7 @@ export const PUPIL_BEHAVIOR = {
         skills: {},
         uniqueSkills: {},
         petSkill: {},
+        weight: 1,
     },
     CLEVER: {
         ignorance: { minPoints: 2, maxPoints: 4 },
@@ -19,6 +21,7 @@ export const PUPIL_BEHAVIOR = {
         skills: {},
         uniqueSkills: {},
         petSkill: {},
+        weight: 1,
     },
     SHY: {
         ignorance: { minPoints: 2, maxPoints: 4 },
@@ -26,6 +29,7 @@ export const PUPIL_BEHAVIOR = {
         skills: {},
         uniqueSkills: {},
         petSkill: {},
+        weight: 1,
     },
     CLOWN: {
         ignorance: { minPoints: 2, maxPoints: 4 },
@@ -33,6 +37,7 @@ export const PUPIL_BEHAVIOR = {
         skills: {},
         uniqueSkills: {},
         petSkill: {},
+        weight: 1,
     },
     NOISY: {
         ignorance: { minPoints: 3, maxPoints: 4 },
@@ -40,6 +45,7 @@ export const PUPIL_BEHAVIOR = {
         skills: {},
         uniqueSkills: {},
         petSkill: {},
+        weight: 1,
     },
     MANIPULATOR: {
         ignorance: { minPoints: 2, maxPoints: 4 },
@@ -47,6 +53,7 @@ export const PUPIL_BEHAVIOR = {
         skills: {},
         uniqueSkills: {},
         petSkill: {},
+        weight: 1,
     },
     HYPERACTIVE: {
         ignorance: { minPoints: 3, maxPoints: 5 },
@@ -54,6 +61,7 @@ export const PUPIL_BEHAVIOR = {
         skills: {},
         uniqueSkills: {},
         petSkill: {},
+        weight: 5,
     },
 } as const;
 

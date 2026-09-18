@@ -6,7 +6,6 @@ import {MatrixValue} from "../domain/constants/pupil/pupilMatrixValue.constant";
 
 @Entity()
 export class GameSession {
-
 	@PrimaryGeneratedColumn("uuid")
 	id: string;
 	
@@ -24,14 +23,17 @@ export class GameSession {
 	pupilsState: GamePupilState[];
 	
 	@Column({ default: 1 })
-	dayNumber: number;
-	
-	@Column({ default: 1 })
 	currentTurn: number;
 
-	@Column({ default: false })
-	finished: boolean;
+	@Column({ default: null, nullable: true })
+	won: boolean;
 
 	@Column({ type: 'jsonb', default: () => "'[]'" })
 	matrix: MatrixValue[][];
+
+	@Column({ default: 'teacher' })
+	phase: 'teacher' | 'student' | 'finished';
+
+	@Column({ default: 1 })
+	pupilDamageMultiplier: number;
 }

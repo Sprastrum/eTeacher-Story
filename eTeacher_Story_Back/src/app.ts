@@ -3,6 +3,7 @@ import express from "express";
 import cors from "cors";
 import "reflect-metadata";
 import { AppDataSource } from "./data-source";
+import { createServer } from "http";
 
 import { CommonRoutesConfig } from "./routers/common.routes.config";
 import { DevRouter } from "./routers/dev.router";
@@ -10,6 +11,8 @@ import { PlayerRouter } from "./routers/player.router";
 import { CourseRunRouter } from "./routers/courseRun.router";
 import { GameSessionRouter } from "./routers/gameSession.router";
 import { CourseRouter } from "./routers/course.router";
+import { GamePupilStateRouter } from "./routers/gamePupilState.router";
+import {setupGameSocket} from "./routers/game.socket";
 
 
 dotenv.config({
@@ -19,6 +22,7 @@ dotenv.config({
 
 
 const app: express.Application = express();
+const httpServer = createServer(app);
 const PORT = process.env.PORT || "3000";
 const routes: Array<CommonRoutesConfig> = [];
 
@@ -59,6 +63,7 @@ routes.push(new PlayerRouter(app));
 routes.push(new CourseRunRouter(app));
 routes.push(new GameSessionRouter(app));
 routes.push(new CourseRouter(app));
+routes.push(new GamePupilStateRouter(app));
 
 app.use((req, res) => {
 	res.status(404).json({
@@ -80,7 +85,9 @@ AppDataSource.initialize()
 	.then(() => {
 		console.log("✅ Database connected");
 
-		app.listen(PORT, () => {
+		setupGameSocket(httpServer);
+
+		httpServer.listen(PORT, () => {
 			console.log(`Server running on http://localhost:${PORT}`);
 
 			console.log(`API available at http://localhost:${PORT}/api`);

@@ -14,7 +14,7 @@ export class Course {
 	@Column({ default: "Native" })
 	subject: string;
 
-	@Column({ default: 1 })
+	@Column({ default: 0 })
 	difficulty: number;
 
 	@Column({ default: 1 })

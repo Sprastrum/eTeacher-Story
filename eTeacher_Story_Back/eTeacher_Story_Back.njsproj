@@ -77,7 +77,7 @@
     <TypeScriptCompile Include="src\services\gameService.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="src\services\playerService.ts">
+    <TypeScriptCompile Include="src\services\player.service.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="src\services\pupilFactory.ts" />

@@ -55,7 +55,7 @@ export class GameSessionService {
         pupilState.boredomPoints = Math.max(0, pupilState.boredomPoints - skill.boredomDamage);
         pupilState.ignorancePoints = Math.max(0, pupilState.ignorancePoints - skill.ignoranceDamage);
 
-        if (pupilState.boredomPoints > skill.mixedDamage) {
+        if (pupilState.boredomPoints >= skill.mixedDamage) {
             pupilState.boredomPoints = Math.max(0, pupilState.boredomPoints - skill.mixedDamage);
         } else {
             const mixedPenetrationDamage = skill.mixedDamage - pupilState.boredomPoints;

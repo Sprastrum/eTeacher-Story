@@ -7,7 +7,7 @@ const MATRIX_ROWS = 3;
 const REDUCED_MATRIX_COL_MIN = 1;
 const REDUCED_MATRIX_COL_MAX = 2;
 
-const QUANTITY_EMPTY_DESK_MIN = 1;
+const QUANTITY_EMPTY_DESK_MIN = 2;
 
 export class GameSessionFactory {
 
@@ -26,13 +26,8 @@ export class GameSessionFactory {
     }
 
     static create(courseRun: CourseRun, pupilCount: number) {
-        const day = courseRun.currentDay;
-
         return {
             courseRun,
-            dayNumber: day,
-            currentTurn: 1,
-            finished: false,
             matrix: this.generateMatrix(pupilCount),
         };
     }

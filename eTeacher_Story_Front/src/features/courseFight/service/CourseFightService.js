@@ -30,6 +30,20 @@ class CourseFightService {
         return response.json();
     }
 
+    async getActiveCourseRun() {
+        const response = await fetch(`${this.baseURL}/course-run/${this.playerId}`, {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' },
+        });
+
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.message || 'Active course run not found');
+        }
+
+        return response.json();
+    }
+
     async createCourseRun(playerId, courseId) {
         const response = await fetch(`${this.baseURL}/course-run`, {
             method: 'POST',
@@ -92,21 +106,18 @@ class CourseFightService {
     async assignCourseToPlayer(courseId) {
         try {
             const player = await this.getPlayer();
-            let courseRun;
-            let gameSession;
-            let gamePupilStates;
 
-
-            if (!player.currentClass) {
-                courseRun = await this.createCourseRun(player.id, courseId);
-
-                gameSession = await this.createGameSession(courseRun.id);
-
-                gamePupilStates = await this.createGamePupilState(gameSession, courseId);
+            if (player.currentClass) {
+                throw new Error('Player has a current class activated');
             }
 
-            return { player, courseRun, gameSession, gamePupilStates };
+            const courseRun = await this.createCourseRun(player.id, courseId);
 
+            const gameSession = await this.createGameSession(courseRun.id);
+
+            const gamePupilStates = await this.createGamePupilState(gameSession, courseId);
+
+            return { player, courseRun, gameSession, gamePupilStates };
         } catch (error) {
             throw error;
         }

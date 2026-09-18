@@ -1,14 +1,11 @@
-import { Entity, PrimaryGeneratedColumn, ManyToMany, Column } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, ManyToMany, Column, PrimaryColumn } from "typeorm";
 import { Player } from "./player";
 import { TargetEnum } from "../domain/enums/target.enum";
 
 
 @Entity()
 export class Skill {
-	@PrimaryGeneratedColumn("uuid")
-	id: string;
-
-	@Column({ default: "" })
+	@PrimaryColumn()
 	name: string;
 
 	@ManyToMany(() => Player, (player) => player.skillsId)

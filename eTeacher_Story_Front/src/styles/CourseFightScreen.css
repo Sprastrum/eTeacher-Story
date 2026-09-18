@@ -1,0 +1,27 @@
+.screen {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.course-fight-screen__information {
+    width: 320px;
+    min-width: 320px;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.course-fight-screen__game {
+    flex: 1;
+    height: 100vh;
+}
+
+.information-container {
+    padding: 10px;
+}
+
+.game.container {
+    width: 100%;
+    height: 1100%;
+}

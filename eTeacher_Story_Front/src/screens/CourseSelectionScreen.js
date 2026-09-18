@@ -1,7 +1,6 @@
 import { BaseScreen } from "./BaseScreen.js";
 import CourseSelectionService from "../features/courseSelection/service/CourseSelectionService.js";
 import { CourseList } from "../features/courseSelection/components/CourseList/CourseList.js";
-import "../styles/CourseSelectionScreen.css"
 
 
 export class CourseSelectionScreen extends BaseScreen {
@@ -15,7 +14,7 @@ export class CourseSelectionScreen extends BaseScreen {
 
     async render(parentElement, data) {
         this.element = document.createElement('div');
-        this.element.className = 'course-selection-screen';
+        this.element.className = 'screen';
         this.element.innerHTML = `
             <div class="course-selection-screen__header">
                 <h1>Selecciona un curso</h1>

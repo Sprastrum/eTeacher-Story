@@ -86,6 +86,7 @@ export class DevController {
 				name: "Jhon Test",
 				grade: 5,
 				behavior: 'JOVIAL',
+				appearance: [1, 1, 1, 1, 1, 1, 1, 1, 1],
 			});
 
 			await pupilRepo.save(pupil1);
@@ -95,6 +96,7 @@ export class DevController {
 				name: "Jhon Student",
 				grade: 10,
 				behavior: 'DREAMER',
+				appearance: [0, 0, 0, 0, 0, 0, 0, 0, 0],
 			});
 
 			await pupilRepo.save(pupil2);
@@ -104,6 +106,7 @@ export class DevController {
 				name: "Jhon Student",
 				grade: 10,
 				behavior: 'DREAMER',
+				appearance: [0, 0, 0, 0, 0, 0, 0, 0, 0],
 			});
 
 			await pupilRepo.save(pupil3);
@@ -113,6 +116,7 @@ export class DevController {
 				name: "Jhon Student",
 				grade: 10,
 				behavior: 'DREAMER',
+				appearance: [0, 0, 0, 0, 0, 0, 0, 0, 0],
 			});
 
 			await pupilRepo.save(pupil4);
@@ -122,6 +126,7 @@ export class DevController {
 				name: "Jhon Student",
 				grade: 10,
 				behavior: 'DREAMER',
+				appearance: [0, 0, 0, 0, 0, 0, 0, 0, 0],
 			});
 
 			await pupilRepo.save(pupil5);
@@ -131,6 +136,7 @@ export class DevController {
 				name: "Jhon Student",
 				grade: 10,
 				behavior: 'DREAMER',
+				appearance: [0, 0, 0, 0, 0, 0, 0, 0, 0],
 			});
 
 			await pupilRepo.save(pupil6);
@@ -154,7 +160,6 @@ export class DevController {
 			const skillRepo = AppDataSource.getRepository(Skill);
 
 			const skill = skillRepo.create({
-				id: "e6fcbd72-cf97-4cfe-9ea4-a849df6d003a",
 				name: "Test Unique Target Skill",
 				ignoranceDamage: 1,
 				boredomDamage: 1,
@@ -164,7 +169,7 @@ export class DevController {
 			await skillRepo.save(skill);
 
 			res.status(201).json({
-				skillId: skill.id
+				name: skill.name,
 			});
 		} catch (err: any) {
 			res.status(500).json({ error: err.message });

@@ -1,4 +1,4 @@
-import {Entity, Column, PrimaryGeneratedColumn, JoinColumn, OneToOne, ManyToMany, JoinTable} from "typeorm";
+import { Entity, Column, PrimaryGeneratedColumn, JoinColumn, OneToOne, ManyToMany, JoinTable } from "typeorm";
 import { TwinoidUser } from "./twinoidUser";
 import { Skill } from "./skill";
 import { CourseRun } from "./courseRun";
@@ -54,7 +54,19 @@ export class Player {
     @JoinColumn()
     currentClass: CourseRun | null;
 
-    @OneToOne(() => TwinoidUser, (user) => user.player)
+    @OneToOne(
+        () => TwinoidUser,
+        (user) => user.player
+    )
     @JoinColumn()
     user: TwinoidUser;
+
+    @Column({ default: 1 })
+    damageMultiplier: number;
+
+    @Column({ default: false })
+    twinoidEffect: boolean;
+
+    @Column({ type: 'jsonb', default: () => "'{}'"})
+    teacherCooldowns: Record<string, number>;
 }

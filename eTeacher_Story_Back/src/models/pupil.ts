@@ -17,7 +17,7 @@ export class Pupil {
 	grade: number;
 
 	@Column({ type: "int", array: true })
-	appearance : number[] = [1,1,1,1,1];
+	appearance: number[] = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 
 	@Column({ type: 'varchar', default: 'DREAMER' })
 	behavior: PupilBehavior;

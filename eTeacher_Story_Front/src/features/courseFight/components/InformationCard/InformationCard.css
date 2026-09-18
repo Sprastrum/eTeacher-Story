@@ -1,0 +1,29 @@
+.student-name {
+    padding: 3px 60px 3px 8px;
+    text-align: left;
+}
+
+.student-grade {
+    padding: 3px 8px 3px 60px;
+    text-align: right;
+}
+
+.grade-box {
+    background-color: #FFE08B;
+    padding: 4px;
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.level-label {
+    font-weight: bold;
+    color: #316980;
+    font-size: 18px;
+    place-items: center;
+    justify-content: center;
+}
+
+.level-value {
+    font-weight: bold;
+    color: #FB8947;
+    font-size: 18px;
+}
