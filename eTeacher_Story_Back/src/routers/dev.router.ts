@@ -1,6 +1,6 @@
 import express from "express";
 import { CommonRoutesConfig } from "./common.routes.config";
-import { DevController } from "../controllers/devController";
+import { DevController } from "../controllers/dev.controller";
 
 
 export class DevRouter extends CommonRoutesConfig {

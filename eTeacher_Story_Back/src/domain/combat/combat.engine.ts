@@ -79,14 +79,15 @@ export async function applyTeacherAction(cache: SessionCache, payload: ActionPay
 function weightedRandomPupil(pupils: GamePupilState[]) {
     if (pupils.length === 0) return null;
 
-    const totaWeight = pupils.reduce(
+    const totalWeight = pupils.reduce(
         (sum, p) => sum + PUPIL_BEHAVIOR[p.pupil.behavior].weight, 0
     );
 
-    let random = Math.random() * totaWeight;
+    let random = Math.random() * totalWeight;
 
     for (const p of pupils) {
-        random -= PUPIL_BEHAVIOR[p.pupil.behavior].weight
+        PUPIL_BEHAVIOR[p.pupil.behavior]
+        random -= PUPIL_BEHAVIOR[p.pupil.behavior].weight;
         if (random <= 0) return p;
     }
 
@@ -127,6 +128,9 @@ export function advanceTurn(cache: SessionCache) {
         const val = Math.max(0, player.teacherCooldowns[key] - 1);
         if (val > 0) updatedCooldowns[key] = val;
     }
+
+    player.teacherCooldowns = updatedCooldowns;
+    session.phase = "teacher";
 }
 
 export function isGameOver(cache: SessionCache) {

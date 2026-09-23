@@ -12,7 +12,8 @@ import { CourseRunRouter } from "./routers/courseRun.router";
 import { GameSessionRouter } from "./routers/gameSession.router";
 import { CourseRouter } from "./routers/course.router";
 import { GamePupilStateRouter } from "./routers/gamePupilState.router";
-import {setupGameSocket} from "./routers/game.socket";
+import { SkillRouter } from "./routers/skill.router";
+import { setupGameSocket } from "./routers/game.socket";
 
 
 dotenv.config({
@@ -64,6 +65,7 @@ routes.push(new CourseRunRouter(app));
 routes.push(new GameSessionRouter(app));
 routes.push(new CourseRouter(app));
 routes.push(new GamePupilStateRouter(app));
+routes.push(new SkillRouter(app));
 
 app.use((req, res) => {
 	res.status(404).json({

@@ -10,6 +10,7 @@ import { GameSession } from "./models/gameSession";
 import { GamePupilState } from "./models/gamePupilState";
 import { GameAction } from "./models/gameAction";
 import { CourseRun } from "./models/courseRun";
+import { PupilSkill } from "./models/pupilSkill";
 
 
 export const AppDataSource = new DataSource({
@@ -31,6 +32,7 @@ export const AppDataSource = new DataSource({
         GameSession,
         GamePupilState,
         GameAction,
-        CourseRun
+        CourseRun,
+        PupilSkill,
     ],
 });
