@@ -96,11 +96,11 @@ export class CourseFightScreen extends BaseScreen {
             this.gameCanvas = new GameCanvas(gameContainer);
             this.gameCanvas.init();
 
-            this.gameCanvas.onAction(({ action, skillId, targetRow, targetCol }) => {
+            this.gameCanvas.onAction(({ action, skillName, targetRow, targetCol }) => {
                 this.socketClient.useSkill({
                     sessionId: this.gameSession.id,
                     playerId: this.player.id,
-                    skillId,
+                    skillName,
                     targetRow,
                     targetCol,
                 });

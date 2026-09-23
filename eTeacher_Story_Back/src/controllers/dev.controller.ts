@@ -3,8 +3,10 @@ import { Course } from "../models/course";
 import { Player } from "../models/player";
 import { TwinoidUser } from "../models/twinoidUser";
 import { Request, Response } from "express";
+import { In } from "typeorm";
 import { AppDataSource } from "../data-source";
 import { Skill } from "../models/skill";
+import { DEFAULT_SKILL_NAMES } from "../domain/constants/skill/defaultSkills.constant";
 
 
 export class DevController {
@@ -12,9 +14,15 @@ export class DevController {
 		try {
 			const playerRepo = AppDataSource.getRepository(Player);
 			const userRepo = AppDataSource.getRepository(TwinoidUser);
+			const skillRepo = AppDataSource.getRepository(Skill);
+
+			const defaultSkills = await skillRepo.find({
+				where: { name: In([...DEFAULT_SKILL_NAMES]) }
+			});
 
 			const player = playerRepo.create({
-				id: "e6fcbd72-cf97-4cfe-9ea4-a849df6d003a"
+				id: "e6fcbd72-cf97-4cfe-9ea4-a849df6d003a",
+				skillsId: defaultSkills
 			});
 
 			await playerRepo.save(player);

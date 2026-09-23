@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, ManyToMany, Column, PrimaryColumn } from "typeorm";
+import { Entity, ManyToMany, Column, PrimaryColumn } from "typeorm";
 import { Player } from "./player";
 import { TargetEnum } from "../domain/enums/target.enum";
 
@@ -25,7 +25,10 @@ export class Skill {
 	
 	@Column({ default: "" })
 	description: string;
-	
+
 	@Column({ default: 1 })
 	cooldownTurns: number;
+
+	@Column({ default: "" })
+	image: string;
 }

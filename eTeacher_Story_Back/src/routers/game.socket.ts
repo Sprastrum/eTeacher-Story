@@ -95,6 +95,7 @@ export function setupGameSocket(httpServer: HttpServer) {
                     return;
                 }
 
+                await applyTeacherAction(cache, payload);
                 advanceTurn(cache);
 
                 if (isGameOver(cache)) {
@@ -109,6 +110,7 @@ export function setupGameSocket(httpServer: HttpServer) {
                     return;
                 }
 
+                applyStudentAction(cache, payload)
                 advanceTurn(cache);
 
                 await persistSessionState(cache);
@@ -148,6 +150,7 @@ function buildStatePayload(cache: ReturnType<typeof Object.create>) {
                 mixedDamage: s.mixedDamage,
                 cooldownTurns: s.cooldownTurns,
                 description: s.description,
+                image: s.image,
             })),
         },
         session: {

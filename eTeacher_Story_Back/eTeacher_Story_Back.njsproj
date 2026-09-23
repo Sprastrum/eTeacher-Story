@@ -59,7 +59,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="src\app.ts" />
     <TypeScriptCompile Include="src\controllers\authController.ts" />
-    <TypeScriptCompile Include="src\controllers\devController.ts" />
+    <TypeScriptCompile Include="src\controllers\dev.controller.ts" />
     <TypeScriptCompile Include="src\controllers\gameController.ts" />
     <TypeScriptCompile Include="src\models\class.ts" />
     <TypeScriptCompile Include="src\models\player.ts">

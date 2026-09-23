@@ -33,30 +33,26 @@ function resolveAdjacent(pupilStates: GamePupilState[], row: number, col: number
 }
 
 export function resolveTargets(pupilStates: GamePupilState[], target: TargetInput) {
-    if (target.row < 0 || target.col < 0) {
-        switch (target.type) {
-            case TargetEnum.SINGLE:
-                return pupilStates.filter(
-                    s => s.row === target.row && s.col === target.col
-                );
+    switch (target.type) {
+        case TargetEnum.SINGLE:
+            return pupilStates.filter(
+                s => s.row === target.row && s.col === target.col
+            );
 
-            case TargetEnum.COLUMN:
-                return pupilStates.filter(
-                    s => s.col === target.col
-                );
+        case TargetEnum.COLUMN:
+            return pupilStates.filter(
+                s => s.col === target.col
+            );
 
-            case TargetEnum.ROW:
-                return pupilStates.filter(
-                    s => s.row === target.row
-                );
+        case TargetEnum.ROW:
+            return pupilStates.filter(
+                s => s.row === target.row
+            );
 
-            case TargetEnum.ALL:
-                return pupilStates;
+        case TargetEnum.ALL:
+            return pupilStates;
 
-            case TargetEnum.TABLE:
-                return resolveAdjacent(pupilStates, target.row, target.col);
-        }
-    } else {
-        return;
+        case TargetEnum.TABLE:
+            return resolveAdjacent(pupilStates, target.row, target.col);
     }
 }

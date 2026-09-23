@@ -49,12 +49,12 @@ export class GameSocketClient {
         this.socket?.emit("join_game", { sessionId });
     }
 
-    useSkill({ sessionId, playerId, skillId, targetRow, targetCol }) {
+    useSkill({ sessionId, playerId, skillName, targetRow, targetCol }) {
         this.socket?.emit("game_action", {
             sessionId,
             playerId,
             action: "skill",
-            skillId,
+            skillName,
             targetRow,
             targetCol,
         });

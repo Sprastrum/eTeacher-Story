@@ -1,7 +1,8 @@
-import {Entity, Column, PrimaryGeneratedColumn, ManyToOne, OneToMany} from "typeorm";
+import {Entity, Column, PrimaryGeneratedColumn, ManyToOne, OneToMany, ManyToMany} from "typeorm";
 import { Course } from "./course";
 import { GamePupilState } from "./gamePupilState";
 import { PupilBehavior } from "../domain/constants/pupil/pupilBehavior.constant";
+import {PupilSkill} from "./pupilSkill";
 
 
 @Entity()
@@ -33,4 +34,10 @@ export class Pupil {
 		(gamePupilState) => gamePupilState.pupil
 	)
 	pupilStates: GamePupilState;
+
+	@ManyToMany(
+		() => PupilSkill,
+		(pupilSkill) => pupilSkill.pupils
+	)
+	skills: PupilSkill;
 }
